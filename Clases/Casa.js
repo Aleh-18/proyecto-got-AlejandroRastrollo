@@ -11,12 +11,14 @@ export class Casa {
             this.#nombre = nombre;
         } else {
             console.log("El nombre debe ser un string");
+            return;
         }
 
         if (typeof lema === "string") {
             this.#lema = lema;
         } else {
             console.log("El lema debe ser un string");
+            return;
         }
 
         this.#miembros = [];
@@ -29,6 +31,7 @@ export class Casa {
             console.log("Miembro " + personaje.nombre + " añadido a la casa " + this.#nombre);
         } else {
             console.log("Solo se pueden añadir objetos tipo Personaje");
+            return;
         }
     }
 
@@ -38,6 +41,7 @@ export class Casa {
             console.log("Miembro " + personaje.nombre + " eliminado de la casa " + this.#nombre);
         } else {
             console.log("Solo se pueden quitar objetos tipo Personaje");
+            return;
         }
     }
 
@@ -63,6 +67,7 @@ export class Casa {
             console.log("Nombre de la casa cambiado a " + this.#nombre);
         } else {
             console.log("El nombre debe ser un string");
+            return;
         }
     }
     
@@ -76,6 +81,7 @@ export class Casa {
             console.log("Nuevo lema de la casa " + this.#nombre + ": " + this.#lema);
         } else {
             console.log("El lema debe ser un string");
+            return;
         }
     }
 

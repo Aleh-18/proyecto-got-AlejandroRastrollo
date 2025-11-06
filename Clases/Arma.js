@@ -9,18 +9,21 @@ export class Arma {
             this.#nombre = nombre;
         } else {
             console.log("El nombre debe ser un string");
+            return;
         }
 
         if (typeof daño === "number") {
             this.#daño = daño;
         } else {
             console.log("El daño debe ser un número");
+            return;
         }
 
         if (typeof tipo === "string") {
             this.#tipo = tipo;
         } else {
             console.log("El tipo debe ser un string");
+            return;
         }
 
         console.log("Arma " + this.#nombre + " creada");
@@ -42,6 +45,7 @@ export class Arma {
             console.log("Nombre del arma cambiado a " + this.#nombre);
         } else {
             console.log("El nombre debe ser un string");
+            return;
         }
     }
 
@@ -55,6 +59,7 @@ export class Arma {
             console.log("Daño de " + this.#nombre + " cambiado a " + this.#daño);
         } else {
             console.log("El daño debe ser un número");
+            return;
         }
     }
 
@@ -68,6 +73,7 @@ export class Arma {
             console.log("Tipo de " + this.#nombre + " cambiado a " + this.#tipo);
         } else {
             console.log("El tipo debe ser un string");
+            return;
         }
     }
 }

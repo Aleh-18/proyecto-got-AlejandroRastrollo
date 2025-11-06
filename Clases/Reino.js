@@ -1,5 +1,6 @@
 import { Casa } from "./Casa.js";
-import { Personaje } from "./Personaje.js";
+import { Rey } from "./personajesEspeciales/Rey.js";
+
 
 export class Reino {
 
@@ -12,12 +13,14 @@ export class Reino {
             this.#nombre = nombre;
         } else {
             console.log("El nombre debe ser un string");
+            return;
         }
 
-        if (rey instanceof Personaje) {
+        if (rey instanceof Rey) {
             this.#rey = rey;
         } else {
             console.log("El rey debe ser tipo Personaje");
+            return;
         }
 
         this.#casas = [];
@@ -30,6 +33,7 @@ export class Reino {
             console.log("Casa " + casa.nombre + " añadida al reino " + this.#nombre);
         } else {
             console.log("Solo se pueden agregar objetos tipo Casa");
+            return;
         }
     }
     
@@ -39,6 +43,7 @@ export class Reino {
             console.log("Casa " + casa.nombre + " eliminada del reino " + this.#nombre);
         } else {
             console.log("Solo se pueden quitar objetos tipo Casa");
+            return;
         }
     }
 
@@ -66,6 +71,7 @@ export class Reino {
             console.log("Nombre del reino cambiado a " + this.#nombre);
         } else {
             console.log("El nombre debe ser un string");
+            return;
         }
     }
 
@@ -73,12 +79,13 @@ export class Reino {
         return this.#rey;
     }
 
-    set rey(personaje) {
-        if (personaje instanceof Personaje) {
-            this.#rey = personaje;
-            console.log("Nuevo rey del reino " + this.#nombre + ": " + personaje.nombre);
+    set rey(rey) {
+        if (rey instanceof Rey) {
+            this.#rey = rey;
+            console.log("Nuevo rey del reino " + this.#nombre + ": " + rey.nombre);
         } else {
-            console.log("El rey debe ser tipo Personaje");
+            console.log("El rey debe ser tipo rey");
+            return;
         }
     }
 
