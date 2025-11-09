@@ -9,7 +9,7 @@ export class Personaje {
     #casa;
     #arma;
 
-    constructor(nombre, edadAnios, casa/*,arma*/){
+    constructor(nombre, edadAnios,fallecido, casa/*,arma*/){
         if (typeof nombre === "string") {
             this.#nombre = nombre;
         } else {
@@ -37,7 +37,13 @@ export class Personaje {
             console.log("El arma debe ser un tipo Arma")
             return;
         }*/
-        this.#fallecido = false;
+       
+        if(typeof this.#fallecido !== "boolean"){
+            this.#fallecido = false;
+        }else{
+            this.#fallecido = fallecido;
+        }
+
         console.log("Personaje " + this.#nombre + " creado");
     }
 
@@ -47,7 +53,7 @@ export class Personaje {
 
     suicidarse(){
         this.#fallecido = true;
-        console.log(this.#nombre + " se ha suicidado");
+        console.log(this.#nombre + " HA FALLECIDO");
     }
 
     // Getters && Setters
