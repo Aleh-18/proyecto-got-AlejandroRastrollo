@@ -1,7 +1,6 @@
 import { Casa } from "./Casa.js";
 import { Rey } from "./personajesEspeciales/Rey.js";
 
-
 export class Reino {
 
     #nombre;
@@ -19,7 +18,7 @@ export class Reino {
         if (rey instanceof Rey) {
             this.#rey = rey;
         } else {
-            console.log("El rey debe ser tipo Personaje");
+            console.log("El rey debe ser tipo Rey");
             return;
         }
 
@@ -56,7 +55,7 @@ export class Reino {
     
     informacionRey(){
         console.log("Rey del reino " + this.#nombre + ":");
-        console.log(this.#rey.nombre);
+        console.log(this.#rey.nombre + (this.#rey.fallecido ? " (fallecido)" : ""));
     }
 
     // Getters && Setters
@@ -84,7 +83,7 @@ export class Reino {
             this.#rey = rey;
             console.log("Nuevo rey del reino " + this.#nombre + ": " + rey.nombre);
         } else {
-            console.log("El rey debe ser tipo rey");
+            console.log("El rey debe ser tipo Rey");
             return;
         }
     }

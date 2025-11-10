@@ -2,13 +2,14 @@ import { Casa } from "./Clases/Casa.js";
 import { Personaje } from "./Clases/Personaje.js";
 import { Arma } from "./Clases/Arma.js";
 import { Reino } from "./Clases/Reino.js";
+import { Rey } from "./Clases/personajesEspeciales/Rey.js";
 
 // --- Crear casas ---
 let casaPHP = new Casa("CasaPHP","Borren PHP");
 let casaJS = new Casa("CasaJS","Siempre JS");
 
 // --- Crear personajes ---
-let reyVictor = new Personaje("Victor",19,casaPHP);
+let reyVictor = new Rey ("Victor",19,casaPHP, 999);
 let vagabundoAlberto = new Personaje("Alberto",25,casaJS);
 let panaderoJavi = new Personaje("Javi",30,casaPHP);
 

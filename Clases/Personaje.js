@@ -9,7 +9,7 @@ export class Personaje {
     #casa;
     #arma;
 
-    constructor(nombre, edadAnios,fallecido, casa/*,arma*/){
+    constructor(nombre, edadAnios, casa,fallecido = false,/*,arma*/){
         if (typeof nombre === "string") {
             this.#nombre = nombre;
         } else {
@@ -31,18 +31,7 @@ export class Personaje {
             return;
         }
 
-        /*if (arma instanceof Arma){
-            this.#arma = arma;
-        }else{
-            console.log("El arma debe ser un tipo Arma")
-            return;
-        }*/
-       
-        if(typeof this.#fallecido !== "boolean"){
-            this.#fallecido = false;
-        }else{
-            this.#fallecido = fallecido;
-        }
+        this.#fallecido = typeof fallecido === "boolean" ? fallecido : false;
 
         console.log("Personaje " + this.#nombre + " creado");
     }

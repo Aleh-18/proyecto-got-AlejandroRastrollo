@@ -3,11 +3,11 @@ import { Personaje } from "../Personaje.js";
 export class Rey extends Personaje {
     #aniosGobernando;
     
-    constructor(nombre,edadAnio,casa,aniosGobernando){
-        super(nombre,edadAnio, casa);
-        if(typeof aniosGobernando == "number"){
+    constructor(nombre, edadAnio, casa, aniosGobernando, fallecido = false){
+        super(nombre, edadAnio, casa,fallecido);
+        if(typeof aniosGobernando === "number"){
             this.#aniosGobernando = aniosGobernando;
-        }else{
+        } else {
             console.log("Los años gobernando deben ser un número");
             return;
         }
